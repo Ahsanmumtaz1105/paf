@@ -8,25 +8,12 @@ from utilities.CommonUtil import get_project_path
 
 class Drivers:
     """
-    Class Name -  Drivers
-    Description - This class contains some common methods used in framework
-    development
-    Parameters - None
-    Return - None
-    Author -  Dhananjay Joshi
-    Modification date - 17-Apr-2018
     """
     driver = None
 
     @staticmethod
     def get_selenium_web_driver_instance(browser_type="chrome"):
         """
-        Function Name -  get_selenium_web driver_instance
-        Description - This method returns the selenium web driver
-        Parameters - Browser_type[]Optional]
-        Return - Web driver
-        Author -  Amol Chitte
-        Modification date - 17-Apr-2018
         """
         try:
             if Drivers.driver is None:
@@ -56,12 +43,6 @@ class Drivers:
     @staticmethod
     def close_driver():
         """
-        Function Name -  close_driver
-        Description - This method closes the selenium web driver
-        Parameters - None
-        Return - None
-        Author -  Dhananjay Joshi
-        Modification date - 17-Apr-2018
         """
         try:
             Drivers.driver.close()
@@ -74,12 +55,6 @@ class Drivers:
     @staticmethod
     def start_winium_driver():
         """
-        Function Name -  start_winium_driver
-        Description - This method starts an instance of winium driver
-        Parameters - None
-        Return - winium driver instance
-        Author -  Dhananjay Joshi
-        Modification date - 17-Apr-2018
         """
         try:
 
