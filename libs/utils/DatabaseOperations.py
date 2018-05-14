@@ -5,12 +5,6 @@ from test_data.GlobalVariables import *
 
 def compare_list(act_list, exp_list):
     """
-    Function Name -  compare_list
-    Description - Compares 2 lists
-    Parameters - list 1, list 2
-    Return - None
-    Author -  Amol Chitte
-    Modification date - 24-Apr-2018
     """
     if sorted(exp_list) == sorted(act_list):
         return True
@@ -26,12 +20,6 @@ def compare_list(act_list, exp_list):
 
 def sql(query):
     """
-    Function Name -  SQL
-    Description - Queries the database table
-    Parameters - query
-    Return - None
-    Author -  Amol Chitte
-    Modification date - 24-Apr-2018
     """
     try:
         db_user = DATABASE_USER
