@@ -23,12 +23,6 @@ status_message_class_locator= \
 
 def navigate_to_savings_report_metrics_page(driver):
     """
-    Function Name -  navigate_to_savings_report_metrics_page
-    Description - This method navigates to savings report metrics page
-    Parameters - driver
-    Return - driver
-    Author -  Amol Chitte
-    Modification date - 23-Apr-2018
     """
     try:
         # Click on system configuration link
@@ -71,12 +65,6 @@ def navigate_to_savings_report_metrics_page(driver):
 
 def get_page_title(driver):
     """
-    Function Name -  getPageTitle
-    Description - This method Returns the title of page
-    Parameters - driver
-    Return - Page title
-    Author -  Amol Chitte
-    Modification date - 23-Apr-2018
     """
     time.sleep(2)
     title = driver.find_element(
@@ -88,12 +76,6 @@ def get_page_title(driver):
 
 def verify_savings_report_metrics_page_title(actual_title):
     """
-    Function Name -  verifySavingsReportMetricsPageTitle
-    Description - Verifies the title of Savings Report Metric page
-    Parameters - Page title
-    Return - Page title comparison result
-    Author -  Amol Chitte
-    Modification date - 23-Apr-2018
     """
     result = False
     if actual_title == "Savings Report Metrics":
@@ -103,12 +85,6 @@ def verify_savings_report_metrics_page_title(actual_title):
 
 def select_measurement_system(driver, option):
     """
-    Function Name -  selectMeasurementSystem
-    Description - Selects the measurement system from drop down
-    Parameters - driver, option to select
-    Return - None
-    Author -  Amol Chitte
-    Modification date - 23-Apr-2018
     """
     driver.find_element_by_class_name(measurement_system_class_locator).click()
     list_element = driver.find_elements_by_xpath(
@@ -123,12 +99,6 @@ def select_measurement_system(driver, option):
 
 def set_one_tree_is_equivalent_to_value(driver, value_to_set):
     """
-    Function Name -  setOneTreeIsEquivalentToValue
-    Description - Sets one tree is equivalent textbox value
-    Parameters - driver, value to set
-    Return - None
-    Author -  Amol Chitte
-    Modification date - 23-Apr-2018
     """
     driver.find_element(By.XPATH, one_tree_is_equivalent_to_xpath_locator).\
         clear()
@@ -139,12 +109,6 @@ def set_one_tree_is_equivalent_to_value(driver, value_to_set):
 
 def set_one_page_uses_to_value(driver, value_to_set):
     """
-    Function Name -  setOnePageUsesToValue
-    Description - Sets one page uses to textbox value
-    Parameters - driver, value to set
-    Return - None
-    Author -  Amol Chitte
-    Modification date - 23-Apr-2018
     """
     driver.find_element(By.XPATH, one_page_is_equivalent_to_xpath_locator).\
         clear()
@@ -156,12 +120,6 @@ def set_one_page_uses_to_value(driver, value_to_set):
 
 def set_one_kg_of_paper_release_to_value(driver, value_to_set):
     """
-    Function Name -  setOneKGOfPaperReleaseToValue
-    Description - Sets one KG of paper uses to textbox value
-    Parameters - driver, value to set
-    Return - None
-    Author -  Amol Chitte
-    Modification date - 23-Apr-2018
     """
     driver.find_element(By.XPATH, one_kg_paper_is_equivalent_to_xpath_locator).\
         clear()
@@ -173,13 +131,6 @@ def set_one_kg_of_paper_release_to_value(driver, value_to_set):
 
 def save_changes_to_report_metrics(driver):
     """
-    Function Name -  saveChangesToReportMetrics
-    Description - Saves the changes on savings report metrics page and
-    verifies save successful message
-    Parameters - driver
-    Return - None
-    Author -  Amol Chitte
-    Modification date - 23-Apr-2018
     """
     driver.find_element(By.XPATH, apply_button_xpath_locator).click()
     time.sleep(2)
@@ -199,14 +150,6 @@ def verify_savings_report_metrics_values_in_database(measurement_system,
                                                      one_page_uses,
                                                      one_kg_of_paper):
     """
-    Function Name -  verifySavingsReportMetricsValuesInDatabase
-    Description - Verifies the savings report metrics parameter values are
-    reflected in database table
-    Parameters - measurement_system, one_tree_equivalent,
-    one_page_uses, one_kg_of_paper
-    Return - None
-    Author -  Amol Chitte
-    Modification date - 24-Apr-2018
     """
     try:
         expected_updated_value = [str(one_tree_equivalent),
