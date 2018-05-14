@@ -1,11 +1,5 @@
 def compare_dictionaries(dict1, dict2, id1=None):
     """
-    Function Name -  compare_dictionaries
-    Description - Compares the dictionaries
-    Parameters - dict1, dict2, id1=None
-    Return - None
-    Author -  Dhananjay Joshi
-    Modification date - 24-Apr-2018
     """
     if dict1 is None and dict2 is None:
         return True, "Both the dictionaries are None"
@@ -47,12 +41,6 @@ def compare_dictionaries(dict1, dict2, id1=None):
 
 def compare_list(act_list, exp_list):
     """
-    Function Name -  compare_list
-    Description - Compares the lists
-    Parameters - act_list, exp_list
-    Return - None
-    Author -  Dhananjay Joshi
-    Modification date - 24-Apr-2018
     """
     if sorted(exp_list) == sorted(act_list):
         return
@@ -68,12 +56,6 @@ def compare_list(act_list, exp_list):
 
 def verify_text(act_str, exp_str):
     """
-    Function Name -  verify_text
-    Description - verifies text
-    Parameters - act_str, exp_str
-    Return - None
-    Author -  Dhananjay Joshi
-    Modification date - 24-Apr-2018
     """
     type_msg = 'Can not compare, {0} and {1} are different types'
     msg = "Failed to verify texts, Actual: {0}, Expected: {1}"
@@ -84,12 +66,6 @@ def verify_text(act_str, exp_str):
 
 def verify(expected, actual, message=''):
     """
-    Function Name -  verify
-    Description -
-    Parameters - expected, actual, message
-    Return - None
-    Author -  Dhananjay Joshi
-    Modification date - 24-Apr-2018
     """
     check_type = type(expected)
     if type(expected) != type(actual):
@@ -136,12 +112,6 @@ def verify(expected, actual, message=''):
 
 def compare_list_of_dict(act_list, exp_list, id1=None):
     """
-    Function Name -  compare_list_of_dict
-    Description -
-    Parameters - act_list, exp_list, id1=None
-    Return - None
-    Author -  Dhananjay Joshi
-    Modification date - 24-Apr-2018
     """
     if len(act_list) != len(exp_list):
         return False, "list length mismatched"
