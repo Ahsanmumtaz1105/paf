@@ -7,13 +7,6 @@ from libs.utils.CommonUtil import take_desktop_screenshot
 
 class LandingUserPage:
     """
-    Class Name -  LandingUserPage
-    Description - This class contains some common methods used in framework
-    development
-    Parameters - None
-    Return - None
-    Author -  Dhananjay Joshi
-    Modification date - 17-Apr-2018
     """
     accounts_xpath = "//span[text()='Accounts']"
     users_xpath = "//span[text()='Users']"
@@ -21,12 +14,6 @@ class LandingUserPage:
     @staticmethod
     def open_users_page(driver):
         """
-        Function Name -  open_users_page
-        Description - This method navigates to user page
-        Parameters - driver
-        Return - driver
-        Author -  Dhananjay Joshi
-        Modification date - 23-Apr-2018
         """
         try:
             SeleniumUtil.wait_for_an_element_to_be_present_by_xpath(
