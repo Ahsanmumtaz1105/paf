@@ -7,24 +7,11 @@ from robot.api.logger import info
 
 class SeleniumUtil:
     """
-    Class Name -  SeleniumUtil
-    Description - This class contains some common wait methods used in framework
-    development
-    Parameters - None
-    Return - None
-    Author -  Dhananjay Joshi
-    Modification date - 17-Apr-2018
     """
     @staticmethod
     def wait_for_an_element_to_be_present_by_xpath(driver, element_xpath,
                                                    time_out_in_seconds=30):
         """
-        Function Name -  wait_for_an_element_to_be_present_by_xpath
-        Description - Dynamic wait by xpath
-        Parameters - driver, element_xpath,time_out_in_seconds=30
-        Return - None
-        Author -  Dhananjay Joshi
-        Modification date - 24-Apr-2018
         """
         try:
             WebDriverWait(driver, int(time_out_in_seconds)).until(
@@ -43,12 +30,6 @@ class SeleniumUtil:
     def wait_for_an_element_to_be_present_by_id(
             driver, element_xpath, time_out_in_seconds=30):
         """
-        Function Name -  wait_for_an_element_to_be_present_by_id
-        Description -Dynamic wait by Id
-        Parameters - driver, element_xpath, time_out_in_seconds=30
-        Return - None
-        Author -  Dhananjay Joshi
-        Modification date - 24-Apr-2018
         """
 
         try:
