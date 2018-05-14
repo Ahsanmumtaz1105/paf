@@ -8,14 +8,6 @@ from libs.utils.CommonUtil import take_desktop_screenshot
 
 class Users:
     """
-    Class Name -  Users
-    Description - This class contains user creation related common
-    methods used in framework
-    development
-    Parameters - None
-    Return - None
-    Author -  Dhananjay Joshi
-    Modification date - 17-Apr-2018
     """
 
     @staticmethod
@@ -69,12 +61,6 @@ class Users:
     @staticmethod
     def get_users_detail(driver, user_id):
         """
-        Function Name -  get_users_detail
-        Description - This method creates user details
-        Parameters - driver, user_id
-        Return -
-        Author -  Dhananjay Joshi
-        Modification date - 03-May-2018
         """
         dict_user_info = {}
         try:
@@ -197,12 +183,6 @@ class Users:
     @staticmethod
     def log_out(driver):
         """
-        Function Name -  log_out
-        Description - This method perofrms log out operation
-        Parameters - driver
-        Return -
-        Author -  Dhananjay Joshi
-        Modification date - 03-May-2018
         """
         try:
             # Logout from application
