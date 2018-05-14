@@ -10,13 +10,7 @@ import subprocess
 
 class SetupVM:
     """
-        Class Name -  SetupVM
-        Description - This class is contains properties properties and methods to be used for Create new VM,
-        Installl download and install Control Suite/Equitrac build.
-        Return - None
-        Author -  Ahsan Mumtaz
-        Modification date - 28-Apr-2018
-        """
+    """
 
     files_to_copy = VMData.files_to_copy
     powershell_path = "powershell.exe"
@@ -54,12 +48,6 @@ class SetupVM:
     @staticmethod
     def set_data_store(team):
         """
-        Function Name -  set_data_store
-        Description - Set the VMSphere datastore based on the value of the value of data from VmData File
-        Parameters - team i.e. IVT, columbus or vasco
-        Return - None
-        Author -  Ahsan Mumtaz
-        Modification date - 26-Apr-2018
         """
         try:
             if team == 'ivt':
@@ -79,14 +67,6 @@ class SetupVM:
     @staticmethod
     def set_template(platform):
         """
-        Function Name -  set_template
-        Description - Set the template name to deploy the new VM, it will take the platform and based on the set the
-        template from which the vm would be deployed
-        Parameters:
-            platform: platform name(i.e. win2k16)
-        Return - None
-        Author - Ahsan Mumtaz
-        Modification date - 28-Apr-2018
         """
         try:
             if platform == 'win2k16':
@@ -105,14 +85,6 @@ class SetupVM:
     def copy_files_from_ntwrk_directory(source_path: object, target_path: object,
                                         files: object) -> object:
         """
-        Function Name -  copy_files_from_ntwrk_directory
-        Description - To Copy the build files from network shared directory
-        Parameters:
-            source_path: directory path from where builds files would be copied.
-            target_path: directory path to which build would be copied.
-        Author - Ahsan Mumtaz
-        Modification date - 28-Apr-2018
-        :type files: object
         """
         try:
             for file in files:
@@ -125,12 +97,6 @@ class SetupVM:
     @staticmethod
     def get_eq_build():
         """
-        Function Name:  get_eq_build
-        Description: This is to get the files from build repository to network shared directory.
-        Parameters: None
-        Return: None
-        Author: Ahsan Mumtaz
-        Modification date: 28-Apr-2018
         """
         try:
             is_exist = os.path.isdir(SetupVM.eq_absolute_path)
@@ -155,16 +121,6 @@ class SetupVM:
     @staticmethod
     def deploy_vm_and_install(vm_name, is_control_suite, is_equitrac, eq_build_version):
         """
-        Function Name:  deploy_vm_and_install
-        Description: This is to deploy the vm and install the Control Suite and Equitrac.
-        Parameters:
-            vm_name: Equitrac Server vm
-            is_control_suite: (bool) True to install Control suite
-            is_equitrac: (bool) True to install Equitrac
-            eq_build_version: Equitrac build version to be deployed
-        Return: None
-        Author: Ahsan Mumtaz
-        Modification date: 28-Apr-2018
         """
         eq_build_path = None
         eq_build_path = SetupVM.eq_absolute_path + r"\*.*"
@@ -190,19 +146,6 @@ class SetupVM:
     def install_equitrac6(self, eq_build_ver, vm_name, team='ivt', platform='win2k16', is_control_suite=True,
                           is_equitrac=True, branch='main'):
         """
-        Function Name:  install_equitrac6
-        Description: To install equitrac 6 build to the new VM
-        Parameters:
-            eq_build_ver: Equitrac build version to be installed.
-            vm_name: new VM Name
-            team: Team name
-            platform: Equitrac windows platform
-            is_control_suite: Install Control Suite
-            is_equitrac: Install Equitrac
-            branch: Branch from which build would be downloaded
-        Return: None
-        Author: Ahsan Mumtaz
-        Modification date: 28-Apr-2018
         """
         if is_control_suite:
             SetupVM.cs_absolute_path = SetupVM.cs_base_path + '\\' + SetupVM.control_suite + r'\*.*'
