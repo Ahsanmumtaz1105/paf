@@ -11,13 +11,6 @@ urllib3.disable_warnings()
 
 class ApiBase:
     """
-    Class Name -  ApiBase
-    Description - This class contains some common methods related to API
-    development
-    Parameters - None
-    Return - None
-    Author -  Dhananjay Joshi
-    Modification date - 17-Apr-2018
     """
     session = None
     response = None
@@ -32,13 +25,6 @@ class ApiBase:
     @staticmethod
     def api_login(user_name, password, host_url=None):
         """
-        Function Name -  api_login
-        Description - This method is used to login to equitrac using
-        api and return session and api url
-        Parameters - username, password, host_url[optional]
-        Return - session, api url
-        Author -  Dhananjay Joshi
-        Modification date - 17-Apr-2018
         """
         try:
             if host_url is None:
@@ -82,12 +68,6 @@ class ApiBase:
     @staticmethod
     def get_and_verify(url):
         """
-        Function Name -  get_and_verify
-        Description - This is get method of api. absolute url is to be passed.
-        Parameters - absolute url of api to be called
-        Return - response object
-        Author -  Dhananjay Joshi
-        Modification date - 17-Apr-2018
         """
         try:
             ApiBase.result = ApiBase.session.get(url, headers=ApiBase.headers)
@@ -103,13 +83,7 @@ class ApiBase:
     @staticmethod
     def post_and_verify(url, data):
         """
-       Function Name -  post_and_verify
-       Description - This method is used post and verify
-       Parameters - url, data
-       Return - True/False
-       Author -  Dhananjay Joshi
-       Modification date - 17-Apr-2018
-       """
+        """
         info("data: %s" % data, True, True)
         try:
             # data = json.loads(data)
@@ -129,14 +103,6 @@ class ApiBase:
     @staticmethod
     def put_and_verify(url, test_data, entity_id=None):
         """
-        Function Name -  put_and_verify
-        Description - This is put method of api. absolute url and input
-        request are to be passed.
-        Parameters - absolute url of api to be called, json input,
-        entity_id=None
-        Return - response code
-        Author -  Dhananjay Joshi
-        Modification date - 17-Apr-2018
         """
         try:
             if entity_id:
@@ -165,12 +131,6 @@ class ApiBase:
     @staticmethod
     def delete_and_verify(url, id1):
         """
-        Function Name -  delete_and_verify
-        Description - This is delete method of api.
-        Parameters -  url, id1
-        Return - response code
-        Author -  Dhananjay Joshi
-        Modification date - 17-Apr-2018
         """
         try:
             res = ApiBase.session.delete(
@@ -187,12 +147,6 @@ class ApiBase:
     @staticmethod
     def verify_status_code(response, exp_code=500):
         """
-        Function Name -  verify_status_code
-        Description - This method is used to verify two status codes
-        Parameters - response, exp_code=500
-        Return - True/False
-        Author -  Dhananjay Joshi
-        Modification date - 17-Apr-2018
         """
         code = response.status_code
         assert code == exp_code, ApiBase.message.format(exp_code, code)
@@ -200,12 +154,6 @@ class ApiBase:
     @staticmethod
     def verify_two_dictionary(resp1, test_data_default):
         """
-        Function Name -  verify_two_dictionary
-        Description - This method is used to verify two dictionary objects
-        Parameters - dict1,dict2
-        Return - True/False
-        Author -  Dhananjay Joshi
-        Modification date - 17-Apr-2018
         """
         try:
             if resp1 == test_data_default:
