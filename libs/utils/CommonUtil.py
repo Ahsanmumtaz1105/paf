@@ -30,12 +30,6 @@ except Exception as e1:
 
 def set_project_path():
     """
-    Function Name -  set_project_path
-    Description - This method sets the project path dynamically.
-    Parameters - None
-    Return - project path
-    Author -  Dhananjay Joshi
-    Modification date - 17-Apr-2018
     """
     try:
         while "paf\\" in os.getcwd():
@@ -66,12 +60,6 @@ def set_project_path():
 
 def get_project_path():
     """
-    Function Name -  get_project_path
-    Description - This method return project path
-    Parameters -
-    Return - project path
-    Author -  Dhananjay Joshi
-    Modification date - 17-Apr-2018
     """
     try:
         return os.getcwd()
@@ -85,13 +73,6 @@ def get_project_path():
 
 def take_desktop_screenshot(file_name):
     """
-    Function Name -  take_desktop_screenshot
-    Description - This method takes a snapshot of desktop main window and
-    embeds it into report.
-    Parameters - image file name
-    Return - NA
-    Author -  Dhananjay Joshi
-    Modification date - 17-Apr-2018
     """
     try:
         file_name = Screenshot().take_screenshot(file_name)
@@ -108,13 +89,6 @@ def take_desktop_screenshot(file_name):
 def random_string_generator(
         size=2, chars=string.ascii_lowercase + string.digits):
     """
-    Function Name -  take_desktop_screenshot
-    Description - This method takes a snapshot of desktop main window and
-    embeds it into report.
-    Parameters - image file name
-    Return - NA
-    Author -  Dhananjay Joshi
-    Modification date - 17-Apr-2018
     """
     try:
         return ''.join(random.choice(chars) for _ in range(int(size)))
@@ -128,12 +102,6 @@ def random_string_generator(
 
 def get_print_file_path(file_name):
     """
-    Function Name -  get_print_file_path
-    Description - This method gets print file path
-    Parameters - file_name
-    Return - project path
-    Author -  Dhananjay Joshi
-    Modification date - 17-Apr-2018
     """
     try:
         return str(get_project_path()) + file_name
@@ -144,12 +112,6 @@ def get_print_file_path(file_name):
 
 def compare_dictionaries(dict1, dict2, id1=None):
     """
-    Function Name -  compare_dictionaries
-    Description - Compares the dictionaries
-    Parameters - dict1, dict2, id1=None
-    Return - None
-    Author -  Dhananjay Joshi
-    Modification date - 24-Apr-2018
     """
     if dict1 is None and dict2 is None:
         return True, "Both the dictionaries are None"
@@ -191,12 +153,6 @@ def compare_dictionaries(dict1, dict2, id1=None):
 
 def compare_list(act_list, exp_list):
     """
-    Function Name -  compare_list
-    Description - Compares the lists
-    Parameters - act_list, exp_list
-    Return - None
-    Author -  Dhananjay Joshi
-    Modification date - 24-Apr-2018
     """
     if sorted(exp_list) == sorted(act_list):
         return
@@ -212,12 +168,6 @@ def compare_list(act_list, exp_list):
 
 def verify_text(act_str, exp_str):
     """
-    Function Name -  verify_text
-    Description - verifies text
-    Parameters - act_str, exp_str
-    Return - None
-    Author -  Dhananjay Joshi
-    Modification date - 24-Apr-2018
     """
     type_msg = 'Can not compare, {0} and {1} are different types'
     msg = "Failed to verify texts, Actual: {0}, Expected: {1}"
@@ -228,12 +178,6 @@ def verify_text(act_str, exp_str):
 
 def verify(expected, actual, message=''):
     """
-    Function Name -  verify
-    Description -
-    Parameters - expected, actual, message
-    Return - None
-    Author -  Dhananjay Joshi
-    Modification date - 24-Apr-2018
     """
     check_type = type(expected)
     if type(expected) != type(actual):
@@ -280,12 +224,6 @@ def verify(expected, actual, message=''):
 
 def compare_list_of_dict(act_list, exp_list, id1=None):
     """
-    Function Name -  compare_list_of_dict
-    Description -
-    Parameters - act_list, exp_list, id1=None
-    Return - None
-    Author -  Dhananjay Joshi
-    Modification date - 24-Apr-2018
     """
     if len(act_list) != len(exp_list):
         return False, "list length mismatched"
