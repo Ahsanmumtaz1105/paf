@@ -1,0 +1,31 @@
+"""
+File Name: VMData
+Description: Configuration values to the variables to setup the new VM and install Control suite and Equitrac
+"""
+cred_file_path = 'C:\git-repo\dj_poc\AutomationPOC\setup_infra\In_creds'
+psFile_path = "C:\git-repo\dj_poc\AutomationPOC\setup_infra\eqsetup_v1.ps1"
+csCoreCompVersion = "1.0.32.9782_20180309122705"
+folder_IVT = "IVT"
+folder_columbus = "Server_Columbus"
+folder_vasco = "Server_Vasco"
+vmHost = "pun-img-esx02.nuance.com"
+datastore_ivt = "QA-Automation-L26"
+datastore_server = "Server-Team-L24"
+template_win2k16 = "IVT-Win-2K16"
+template_win2k12r2 = "IVT-WIN-2K12R2"
+template_win2k12 = "IVT-Win-2K12"
+domain_name = "IVT-REGRESSION.COM"
+vm_name_prefix = "auto-"
+domain_admin_name = "IVT-REGRESSION.COM\pune_ivt"
+domain_admin_pwd = "Equitrac1"
+domain_user = "IVT-REGRESSION.COM\pune_ivt"
+domain_pwd = 'Equitrac1'
+VM_user_name = "Administrator"
+VM_user_pwd = "Equitrac1"
+cs_installer_base_path = "\\\\win2k12r2-03\\Installers\ControlSuite"
+cs_core_comp_version = "1.0.32.9782_20180309122705"
+eq_base_path = "\\\\win2k12r2-03\\Installers\\EQ6.0\\"
+os_cus_spec = "OS2016Auto"
+main_base_path = "\\\\wat-bartist.watdev.ca\\Build_Depot\\Equitrac6" \
+                 "\\Builds\\main\\Installers\\Windows\\"
+files_to_copy = "Equitrac.exe;Equitrac.Client.x64.msi"
