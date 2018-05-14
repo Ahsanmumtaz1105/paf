@@ -5,12 +5,6 @@ from robot.api.logger import *
 
 def run_auto_it_executables(path_to_executable, argument):
     """
-    Function Name -  run_auto_it_executables
-    Description - This method runs auto it executables
-    Parameters - path_to_executable, argument
-    Return - Web driver
-    Author -  Dhananjay Joshi
-    Modification date - 03-May-2018
     """
     try:
         path_to_executable = \
