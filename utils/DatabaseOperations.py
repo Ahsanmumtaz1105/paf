@@ -9,14 +9,6 @@ def verify_savings_report_metrics_values_in_database(measurement_system,
                                                      one_page_uses,
                                                      one_kg_of_paper):
     """
-    Function Name -  verifySavingsReportMetricsValuesInDatabase
-    Description - Verifies the savings report metrics parameter values are
-    reflected in database table
-    Parameters - measurement_system, one_tree_equivalent,
-    one_page_uses, one_kg_of_paper
-    Return - None
-    Author -  Amol Chitte
-    Modification date - 24-Apr-2018
     """
     try:
         expected_updated_value = [str(one_tree_equivalent),
@@ -60,12 +52,6 @@ def verify_savings_report_metrics_values_in_database(measurement_system,
 
 def compare_list(act_list, exp_list):
     """
-    Function Name -  compare_list
-    Description - Compares 2 lists
-    Parameters - list 1, list 2
-    Return - None
-    Author -  Amol Chitte
-    Modification date - 24-Apr-2018
     """
     if sorted(exp_list) == sorted(act_list):
         return True
@@ -81,18 +67,12 @@ def compare_list(act_list, exp_list):
 
 def sql(query):
     """
-    Function Name -  SQL
-    Description - Queries the database table
-    Parameters - query
-    Return - None
-    Author -  Amol Chitte
-    Modification date - 24-Apr-2018
     """
     try:
-        db_user = r'ivt-regression.com\pune_ivt'
-        db_password = 'Equitrac1'
-        database = 'eqcas'
-        db_address = '10.66.28.119:1433'
+        db_user = r'domain\user'
+        db_password = 'passwrd'
+        database = 'dbname'
+        db_address = '10.x.x.x:1433'
         # Connect to database and execute query.
         db_result = pymssql.connect(db_address, db_user, db_password,
                                     database).cursor()
