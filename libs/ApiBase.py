@@ -127,18 +127,26 @@ class ApiBase:
             raise Exception("Unable to send put request")
 
     @staticmethod
-    def put_and_verify(url, test_data):
+    def put_and_verify(url, test_data, entity_id=None):
         """
         Function Name -  put_and_verify
         Description - This is put method of api. absolute url and input
         request are to be passed.
-        Parameters - absolute url of api to be called, json input
+        Parameters - absolute url of api to be called, json input,
+        entity_id=None
         Return - response code
         Author -  Dhananjay Joshi
         Modification date - 17-Apr-2018
         """
         try:
-            test_data = json.loads(test_data)
+            if entity_id:
+                url += "/" + str(entity_id)
+            info("url data: %s" % url, True, True)
+
+            try:
+                test_data = json.loads(test_data)
+            except:
+                test_data = json.dumps(test_data)
             info("Inside put_and_verify:: with parameters %s::%s "
                  % (url, test_data), True, True)
             ApiBase.result = ApiBase.session.put(url, json=test_data,
@@ -153,35 +161,6 @@ class ApiBase:
                   True)
             raise Exception("Unable to send put request")
 
-    # @staticmethod
-    # def put_and_verify(url, test_data, entity_id):
-    #     """
-    #         Function Name -  put_and_verify
-    #         Description - This is put method of api. absolute url and input
-    #         request are to be passed.
-    #         Parameters - absolute url of api to be called, json input
-    #         Return - respose code
-    #         Author -  Dhananjay Joshi
-    #         Modification date - 17-Apr-2018
-    #     """
-    #     try:
-    #         if entity_id:
-    #             url += "/" + str(entity_id)
-    #         info("url data: %s" % url, True, True)
-    #         # test_data = json.loads(test_data)
-    #         test_data = json.dumps(test_data)
-    #         # info("Inside put_and_verify:: with parameters %s::%s " %
-    #         # (url,test_data),True,True)
-    #         res = ApiBase.session.put(
-    #             url, json=test_data, headers=ApiBase.headers, verify=False)
-    #         return res.status_code
-    #     except Exception as e:
-    #         tb = sys.exc_info()[2]
-    #         error(
-    #             "Exception in api_base>>put_and_verify. Details are - "
-    #             "[%s]::Line Number[%s]" % (e.with_traceback(tb),
-    #                                        sys.exc_info()[2].tb_lineno), True)
-    #         raise Exception("Unable to send put request")
 
     @staticmethod
     def delete_and_verify(url, id1):
@@ -235,7 +214,7 @@ class ApiBase:
             elif resp1 is None or test_data_default is None:
                 ApiBase.flag = False
                 raise Exception(
-                    "Data us None. Data mis match. Expected {}, "
+                    "Data is None. Data mis match. Expected {}, "
                     "Actual {}".format(test_data_default, resp1))
             else:
                 ApiBase.flag = False
@@ -247,5 +226,5 @@ class ApiBase:
                   "- [%s]::Line Number[%s]" % (e.with_traceback(tb),
                                                sys.exc_info()[2].tb_lineno),
                   True)
-            raise Exception("Unable to verify_two_dictionary")
+            ApiBase.flag = False
             return ApiBase.flag

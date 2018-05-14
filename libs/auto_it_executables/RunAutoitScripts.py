@@ -14,7 +14,8 @@ def run_auto_it_executables(path_to_executable, argument):
     """
     try:
         path_to_executable = \
-            os.getcwd() + "\\auto_it_executables\\" + path_to_executable + " " \
+            os.getcwd() + "\\libs\\auto_it_executables\\" + path_to_executable\
+            + " " \
             + argument
         os.system(path_to_executable)
         info("Running '%s' AutoIt executable with arguments '%s'" %

@@ -3,7 +3,7 @@ import sys
 import time
 from robot.api.logger import *
 from selenium import webdriver
-from utilities.CommonUtil import get_project_path
+from libs.utils.CommonUtil import get_project_path
 
 
 class Drivers:

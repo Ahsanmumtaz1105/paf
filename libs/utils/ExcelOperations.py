@@ -1,6 +1,6 @@
 import sys
 from openpyxl import load_workbook
-from utilities.CommonUtil import get_project_path
+from libs.utils.CommonUtil import get_project_path
 from robot.api.logger import *
 
 
@@ -26,7 +26,7 @@ class ExcelOperations:
         """
 
         try:
-            wb_name = get_project_path() + "\\testdata\\" + wb_name
+            wb_name = get_project_path() + "\\test_data\\" + wb_name
             wb = load_workbook(wb_name)
             sheet = wb[sheet_name]
             val = sheet.cell(row=int(row_num), column=int(

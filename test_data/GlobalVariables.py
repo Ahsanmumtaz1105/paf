@@ -1,5 +1,9 @@
 USER_NAME =  "pune_ivt"
 PASSWORD = "Equitrac1"
-MACHINE_NAME = "10.66.28.139"
+MACHINE_NAME = "10.66.28.131"
 USER_EMAIL = "dhananjay.joshi@nuance.com"
 BROWSER = "chrome"
+DATABASE_USER = r'ivt-regression.com\pune_ivt'
+DATABASE_PASSWORD = 'Equitrac1'
+DATABASE_NAME = 'eqcas'
+DATABASE_ADDRESS = '10.66.28.131:1433'
