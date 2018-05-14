@@ -6,23 +6,10 @@ from robot.api.logger import *
 
 class ExcelOperations:
     """
-    Class Name -  ExcelOperations
-    Description - This class contains some common methods used in framework
-    development
-    Parameters - None
-    Return - None
-    Author -  Dhananjay Joshi
-    Modification date - 17-Apr-2018
     """
     @staticmethod
     def get_cell_data_from_excel(wb_name, sheet_name, row_num, col_num):
         """
-        Function Name -  get_cell_data_from_excel
-        Description - gets cell data from excel
-        Parameters - wb_name, sheet_name, row_num, col_num
-        Return - None
-        Author -  Dhananjay Joshi
-        Modification date - 24-Apr-2018
         """
 
         try:
